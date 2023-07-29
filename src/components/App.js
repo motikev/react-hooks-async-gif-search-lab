@@ -1,15 +1,25 @@
-import React from "react";
+// GifSearch.js
+import React, { useState } from "react";
 
-import NavBar from "./NavBar";
+const GifSearch = ({ onSearch }) => {
+  const [query, setQuery] = useState("");
 
-// the App component should render out the GifListContainer component
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    onSearch(query);
+  };
 
-function App() {
   return (
-    <div>
-      <NavBar color="black" title="Giphy Search" />
-    </div>
+    <form onSubmit={handleSubmit}>
+      <input
+        type="text"
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+        placeholder="Search for GIFs..."
+      />
+      <button type="submit">Search</button>
+    </form>
   );
-}
+};
 
-export default App;
+export default GifSearch;
