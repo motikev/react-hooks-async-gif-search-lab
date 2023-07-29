@@ -7,11 +7,7 @@ const GifListContainer = () => {
   const [gifs, setGifs] = useState([]);
 
   const handleSearch = (query) => {
-    // Implement fetching data from Giphy API here based on the user's search query
-    // Store the first 3 GIFs from the API response in the "gifs" state
-
-    // Replace 'YOUR_API_KEY' with your actual Giphy API key
-    const apiKey = "LNI1rqiXniMM9vTbDpwLCfBlnIQsWqcK";
+    const apiKey = "LNI1rLNI1rqiXniMM9vTbDpwLCfBlnIQsWqcK";
     const apiUrl = `https://api.giphy.com/v1/gifs/search?q=${query}&api_key=${apiKey}&limit=3`;
 
     fetch(apiUrl)
